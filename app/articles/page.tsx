@@ -13,7 +13,7 @@ export default function ArticlesPage() {
       id: 1,
       title: "Unveiling the Ravages of Erosion in Southeastern Nigeria: A Historical Analysis",
       category: "GIS",
-      description: "A comprehensive guide to understanding GIS fundamentals and remote sensing concepts",
+      description: "An article to understanding how GIS can help in tackling erosion in Southeastern Nigeria",
       url: "https://docs.google.com/document/d/1PDHn072-tzZ1RnXTq-gzCoeSweQKa2ei/edit?usp=sharing&ouid=113353938832850891830&rtpof=true&sd=true",
       readTime: "8 min",
     },
