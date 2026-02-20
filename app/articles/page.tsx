@@ -35,9 +35,9 @@ export default function ArticlesPage() {
     },
     {
       id: 4,
-      title: "Remote Sensing Applications in Environmental Monitoring",
+      title: "Nigeria’s Top Three Development Priorities Over the Next Five Years",
       category: "Remote Sensing",
-      description: "Practical applications of remote sensing for environmental monitoring and assessment",
+      description: "Essay I submitted as an applicant for Lateef Jakande Leadership Academy application",
       url: "https://docs.google.com/document/d/1w9cxZw1PRZJskcmy37H-BcmGgb0YLCTH5tHyUwygNbY/edit?usp=sharing",
       readTime: "9 min",
     },
