@@ -11,7 +11,7 @@ export default function ArticlesPage() {
   const articles = [
     {
       id: 1,
-      title: "Introduction to GIS and Remote Sensing",
+      title: "Unveiling the Ravages of Erosion in Southeastern Nigeria: A Historical Analysis",
       category: "GIS",
       description: "A comprehensive guide to understanding GIS fundamentals and remote sensing concepts",
       url: "https://docs.google.com/document/d/1PDHn072-tzZ1RnXTq-gzCoeSweQKa2ei/edit?usp=sharing&ouid=113353938832850891830&rtpof=true&sd=true",

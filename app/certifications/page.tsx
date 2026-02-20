@@ -13,7 +13,7 @@ export default function CertificationsPage() {
       id: "gsdc-celh",
       title: "GSDC Continuing Education Learning Hours",
       issuer: "GSDC",
-      date: "2024",
+      date: "2025",
       image:
         "https://www.dropbox.com/scl/fi/ajtflyawo3gn2whkzym49/GCELH-GSDC-Continuing-Education-Learning-Hours-..jpg?rlkey=zjw5py2gqvqy7304arkykcot1&st=i0uedwrj&raw=1",
       type: "certificate",
@@ -22,7 +22,7 @@ export default function CertificationsPage() {
       id: "gsdc-85f82bcc",
       title: "GSDC Professional Certification",
       issuer: "GSDC",
-      date: "2024",
+      date: "2025",
       image:
         "https://www.dropbox.com/scl/fi/1qyraondnsx23u14edq96/85f82bcc.jpg?rlkey=sl4cs57a43qwhpbobu37w0hrp&st=a2jnvv2m&raw=1",
       type: "certificate",
@@ -31,7 +31,7 @@ export default function CertificationsPage() {
       id: "gsdc-ai",
       title: "GSDC AI Implementation Series",
       issuer: "GSDC",
-      date: "2024",
+      date: "2025",
       image:
         "https://www.dropbox.com/scl/fi/zere0spj1fs53a94hmbjc/GSDC-AI-Implementation-Series.jpg?rlkey=u0jkfpxdizsszgmhph229tgf1&st=llmnyqw7&raw=1",
       type: "certificate",
@@ -40,9 +40,19 @@ export default function CertificationsPage() {
       id: "gsdc-general",
       title: "GSDC Certificate",
       issuer: "GSDC",
-      date: "2024",
+      date: "2025",
       image:
         "https://www.dropbox.com/scl/fi/doi3t0i4dliq1n3zqyyw2/GSDC-Certificate.jpg?rlkey=p1983x9izzjvb2vm3q2wz1vnh&st=8v28k9an&raw=1",
+      type: "certificate",
+    },
+    {
+      id: "fcc-python",
+      title: "Scientific Computing with Python",
+      issuer: "freeCodeCamp",
+      date: "2026",
+      image:
+        "https://www.dropbox.com/scl/fi/2wpm5ggsjgi2omo3pfzmn/Python-Developer-Certification.jpg?rlkey=ydibomwzwitiyip39sv9oz3ec&st=8f5zzg5h&raw=1",
+      link: "https://freecodecamp.org/certification/extremesam/python-v9",
       type: "certificate",
     },
     {
@@ -53,6 +63,32 @@ export default function CertificationsPage() {
       image: "/placeholder.svg?height=400&width=600",
       link: "https://www.dropbox.com/scl/fi/v9jqpb8jewnb17bjwd843/Mindluster_Certificate.pdf?rlkey=v8jl62vgis7a8vayj1cyt8otq&st=g9i8btmx&dl=0",
       type: "pdf",
+    },
+    {
+      id: "spatial-data-science",
+      title: "Spatial Data Science: The New Frontier in Analytics",
+      issuer: "Esri",
+      date: "October 3, 2024",
+      link: "https://www.dropbox.com/scl/fi/sh8h10jt1uk2dc8w9w0t0/Spatial-Data-Science_-The-New-Frontier-in-Analytics_Certificate_10032024.pdf?rlkey=a6u2tjzxqwhcg6n1nr8xl3bcm&st=ryd1s2hf&raw=1",
+      type: "pdf",
+    },
+    {
+      id: "fcc-javascript",
+      title: "JavaScript Developer Certification",
+      issuer: "freeCodeCamp",
+      date: "2026",
+      image:
+        "https://www.dropbox.com/scl/fi/oatn9fapdoz9m9fan18b8/Javascript-Developer-Certification.jpg?rlkey=p1amq2pu36ooa1liqweq5bxqv&st=rzkwr8ee&raw=1",
+      type: "certificate",
+    },
+    {
+      id: "fcc-responsive-web",
+      title: "Responsive Web Design Developer Certificate",
+      issuer: "freeCodeCamp",
+      date: "2026",
+      image:
+        "https://www.dropbox.com/scl/fi/qcgyskzj8m9946axu20a2/Responsive-Web-Design.jpg?rlkey=hc2ksue276ixm15kvlwd54vp6&st=bp50svkk&raw=1",
+      type: "certificate",
     },
   ]
 
