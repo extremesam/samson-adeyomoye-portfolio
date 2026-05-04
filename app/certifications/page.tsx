@@ -97,15 +97,7 @@ export default function CertificationsPage() {
         "https://www.dropbox.com/scl/fi/ajtflyawo3gn2whkzym49/GCELH-GSDC-Continuing-Education-Learning-Hours-..jpg?rlkey=zjw5py2gqvqy7304arkykcot1&st=i0uedwrj&raw=1",
       type: "certificate",
     },
-    {
-      id: "gsdc-85f82bcc",
-      title: "GSDC Professional Certification",
-      issuer: "GSDC",
-      date: "2024",
-      image:
-        "https://www.dropbox.com/scl/fi/1qyraondnsx23u14edq96/85f82bcc.jpg?rlkey=sl4cs57a43qwhpbobu37w0hrp&st=a2jnvv2m&raw=1",
-      type: "certificate",
-    },
+
     {
       id: "gsdc-ai",
       title: "GSDC AI Implementation Series",
@@ -117,7 +109,7 @@ export default function CertificationsPage() {
     },
     {
       id: "gsdc-general",
-      title: "GSDC Certificate",
+      title: "AI Leadership Mastery",
       issuer: "GSDC",
       date: "2024",
       image:
