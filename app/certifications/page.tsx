@@ -73,22 +73,6 @@ export default function CertificationsPage() {
       type: "pdf",
     },
     {
-      id: "google-digital",
-      title: "Google Digital Skills",
-      issuer: "Google",
-      date: "2022",
-      image: "/placeholder.svg?height=400&width=600",
-      type: "certificate",
-    },
-    {
-      id: "geospatial-r",
-      title: "Manipulating and Mapping Geospatial Data in R",
-      issuer: "Atlan Labs",
-      date: "2020",
-      image: "/placeholder.svg?height=400&width=600",
-      type: "certificate",
-    },
-    {
       id: "gsdc-celh",
       title: "GSDC Continuing Education Learning Hours",
       issuer: "GSDC",
@@ -124,6 +108,22 @@ export default function CertificationsPage() {
       image: "/placeholder.svg?height=400&width=600",
       link: "https://www.dropbox.com/scl/fi/v9jqpb8jewnb17bjwd843/Mindluster_Certificate.pdf?rlkey=v8jl62vgis7a8vayj1cyt8otq&st=g9i8btmx&dl=0",
       type: "pdf",
+    },
+    {
+      id: "google-digital",
+      title: "Google Digital Skills",
+      issuer: "Google",
+      date: "2022",
+      image: "/placeholder.svg?height=400&width=600",
+      type: "certificate",
+    },
+    {
+      id: "geospatial-r",
+      title: "Manipulating and Mapping Geospatial Data in R",
+      issuer: "Atlan Labs",
+      date: "2020",
+      image: "/placeholder.svg?height=400&width=600",
+      type: "certificate",
     },
   ]
 
