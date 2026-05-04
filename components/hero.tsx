@@ -15,8 +15,8 @@ export default function Hero() {
           GIS Analyst | Geospatial Developer | Remote Sensing Enthusiast
         </p>
         <p className="text-base md:text-lg mb-8 opacity-85 leading-relaxed animate-slide-up [animation-delay:400ms]">
-          I design and develop geospatial tools that transform complex data into meaningful insights. Passionate about
-          blending <strong>GIS, Remote Sensing, and AI</strong> for smarter decision-making and efficient workflows.
+          A self-motivated and results-oriented GIS and remote sensing professional with expertise in geospatial data analysis, 
+          image processing, and programming. Passionate about <strong>environmental monitoring, natural hazards, and AI integration</strong> for smarter decision-making.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center animate-slide-up [animation-delay:600ms]">
           <a

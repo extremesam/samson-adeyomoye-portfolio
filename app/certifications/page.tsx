@@ -10,6 +10,69 @@ export default function CertificationsPage() {
 
   const certifications = [
     {
+      id: "python-freecodecamp",
+      title: "Python Developer Certification",
+      issuer: "freeCodeCamp",
+      date: "2026",
+      image:
+        "https://www.dropbox.com/scl/fi/2wpm5ggsjgi2omo3pfzmn/Python-Developer-Certification.jpg?rlkey=ydibomwzwitiyip39sv9oz3ec&st=usv08qzj&raw=1",
+      type: "certificate",
+    },
+    {
+      id: "javascript-freecodecamp",
+      title: "Javascript Developer Certification",
+      issuer: "freeCodeCamp",
+      date: "2026",
+      image:
+        "https://www.dropbox.com/scl/fi/oatn9fapdoz9m9fan18b8/Javascript-Developer-Certification.jpg?rlkey=p1amq2pu36ooa1liqweq5bxqv&st=wh44bgbz&raw=1",
+      type: "certificate",
+    },
+    {
+      id: "powerbi-microsoft",
+      title: "Power BI Data Modelling",
+      issuer: "Microsoft",
+      date: "2026",
+      image: "/placeholder.svg?height=400&width=600",
+      link: "https://www.dropbox.com/scl/fi/u6h50w1zcf5rnqpkkrrhe/Power-BI-Data-Modelling-Basics-Tutorial-Course.pdf?rlkey=by0eor32y6twomffeo6gokvfg&st=91deir0y&dl=0",
+      type: "pdf",
+    },
+    {
+      id: "webdesign-freecodecamp",
+      title: "Responsive Web Design",
+      issuer: "freeCodeCamp",
+      date: "2026",
+      image:
+        "https://www.dropbox.com/scl/fi/qcgyskzj8m9946axu20a2/Responsive-Web-Design.jpg?rlkey=hc2ksue276ixm15kvlwd54vp6&st=ogwzkfyf&raw=1",
+      type: "certificate",
+    },
+    {
+      id: "gis-climate-esri",
+      title: "GIS for Climate Action",
+      issuer: "ESRI",
+      date: "2026",
+      image: "/placeholder.svg?height=400&width=600",
+      link: "https://www.dropbox.com/scl/fi/22gamk90ppone88qmtbdp/GIS-for-Climate-Action_Certificate_03262026.pdf?rlkey=3i1u90xbh7wikvqat5qs6acwp&st=z9n5zju5&dl=0",
+      type: "pdf",
+    },
+    {
+      id: "spatial-data-esri",
+      title: "Spatial Data Science",
+      issuer: "ESRI",
+      date: "2024",
+      image: "/placeholder.svg?height=400&width=600",
+      link: "https://www.dropbox.com/scl/fi/sh8h10jt1uk2dc8w9w0t0/Spatial-Data-Science_-The-New-Frontier-in-Analytics_Certificate_10032024.pdf?rlkey=a6u2tjzxqwhcg6n1nr8xl3bcm&st=3y0s0zec&dl=0",
+      type: "pdf",
+    },
+    {
+      id: "esri-aws",
+      title: "Introduction to Esri on AWS",
+      issuer: "ESRI",
+      date: "2024",
+      image: "/placeholder.svg?height=400&width=600",
+      link: "https://www.dropbox.com/scl/fi/oqkl3v6q3d4f01v3mdruh/Introduction-to-Esri-on-AWS.pdf?rlkey=3t1n3u7v0t8q6wmp92odek2tm&st=c0ptursd&dl=0",
+      type: "pdf",
+    },
+    {
       id: "gsdc-celh",
       title: "GSDC Continuing Education Learning Hours",
       issuer: "GSDC",
@@ -18,15 +81,7 @@ export default function CertificationsPage() {
         "https://www.dropbox.com/scl/fi/ajtflyawo3gn2whkzym49/GCELH-GSDC-Continuing-Education-Learning-Hours-..jpg?rlkey=zjw5py2gqvqy7304arkykcot1&st=i0uedwrj&raw=1",
       type: "certificate",
     },
-    {
-      id: "gsdc-85f82bcc",
-      title: "GSDC Professional Certification",
-      issuer: "GSDC",
-      date: "2024",
-      image:
-        "https://www.dropbox.com/scl/fi/1qyraondnsx23u14edq96/85f82bcc.jpg?rlkey=sl4cs57a43qwhpbobu37w0hrp&st=a2jnvv2m&raw=1",
-      type: "certificate",
-    },
+
     {
       id: "gsdc-ai",
       title: "GSDC AI Implementation Series",
@@ -38,7 +93,7 @@ export default function CertificationsPage() {
     },
     {
       id: "gsdc-general",
-      title: "GSDC Certificate",
+      title: "AI Leadership Mastery",
       issuer: "GSDC",
       date: "2024",
       image:
@@ -46,13 +101,29 @@ export default function CertificationsPage() {
       type: "certificate",
     },
     {
-      id: "mindluster",
-      title: "Mindluster Certificate",
+      id: "pyqgis",
+      title: "Automated GIS Workflows with PyQGIS",
       issuer: "Mindluster",
       date: "2024",
       image: "/placeholder.svg?height=400&width=600",
       link: "https://www.dropbox.com/scl/fi/v9jqpb8jewnb17bjwd843/Mindluster_Certificate.pdf?rlkey=v8jl62vgis7a8vayj1cyt8otq&st=g9i8btmx&dl=0",
       type: "pdf",
+    },
+    {
+      id: "google-digital",
+      title: "Google Digital Skills",
+      issuer: "Google",
+      date: "2022",
+      image: "/placeholder.svg?height=400&width=600",
+      type: "certificate",
+    },
+    {
+      id: "geospatial-r",
+      title: "Manipulating and Mapping Geospatial Data in R",
+      issuer: "Atlan Labs",
+      date: "2020",
+      image: "/placeholder.svg?height=400&width=600",
+      type: "certificate",
     },
   ]
 
@@ -83,20 +154,16 @@ export default function CertificationsPage() {
                       className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
-                    <div className="flex items-center justify-center h-full">
+                    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-red-500/10 to-red-600/20">
                       <svg
-                        className="w-24 h-24 text-muted-foreground"
-                        fill="none"
-                        stroke="currentColor"
+                        className="w-16 h-16 text-red-500 mb-2"
+                        fill="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                        />
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM8.5 13h1.3l.7 2.1.7-2.1h1.3l-1.3 3.5 1.4 3.5h-1.3l-.8-2.3-.8 2.3H8.5l1.4-3.5L8.5 13zm5.5 0h1.8c.9 0 1.7.7 1.7 1.5v3c0 .8-.8 1.5-1.7 1.5H14v-6zm1.2 1.2v3.6h.6c.3 0 .5-.2.5-.5v-2.6c0-.3-.2-.5-.5-.5h-.6z"/>
                       </svg>
+                      <span className="text-sm font-medium text-muted-foreground">PDF Document</span>
+                      <span className="text-xs text-muted-foreground/70 mt-1">Click to preview</span>
                     </div>
                   )}
                 </div>
@@ -121,28 +188,63 @@ export default function CertificationsPage() {
           </div>
         </div>
 
-        {selectedCert && (
-          <div
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedCert(null)}
-          >
-            <div className="relative max-w-4xl w-full max-h-[90vh] overflow-auto bg-card rounded-lg p-4">
-              <button
-                onClick={() => setSelectedCert(null)}
-                className="absolute top-2 right-2 p-2 bg-background rounded-full hover:bg-muted transition z-10"
+        {selectedCert && (() => {
+          const cert = certifications.find((c) => c.id === selectedCert)
+          const isPdf = cert?.type === "pdf"
+          const pdfUrl = cert?.link?.replace("dl=0", "raw=1")
+          
+          return (
+            <div
+              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+              onClick={() => setSelectedCert(null)}
+            >
+              <div 
+                className="relative max-w-5xl w-full max-h-[90vh] overflow-auto bg-card rounded-lg p-4"
+                onClick={(e) => e.stopPropagation()}
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <img
-                src={certifications.find((c) => c.id === selectedCert)?.image || "/placeholder.svg"}
-                alt="Certificate"
-                className="w-full h-auto"
-              />
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 className="font-bold text-lg text-foreground">{cert?.title}</h3>
+                    <p className="text-sm text-muted-foreground">Issued by: {cert?.issuer}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {isPdf && cert?.link && (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-primary text-primary-foreground rounded text-sm font-medium hover:opacity-90 transition"
+                      >
+                        Download PDF
+                      </a>
+                    )}
+                    <button
+                      onClick={() => setSelectedCert(null)}
+                      className="p-2 bg-muted rounded-full hover:bg-muted/80 transition"
+                    >
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                {isPdf && pdfUrl ? (
+                  <iframe
+                    src={`https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`}
+                    className="w-full h-[70vh] rounded border border-border"
+                    title={cert?.title}
+                  />
+                ) : (
+                  <img
+                    src={cert?.image || "/placeholder.svg"}
+                    alt="Certificate"
+                    className="w-full h-auto rounded"
+                  />
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )
+        })()}
       </div>
       <Footer />
       <ScrollToTop />

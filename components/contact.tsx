@@ -1,7 +1,7 @@
 export default function Contact() {
   const contactLinks = [
     { label: "Email", href: "mailto:extremeadeyomoye@gmail.com", icon: "📧" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/samson-pfg", icon: "💼" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/samson-adeyomoye", icon: "💼" },
     { label: "Twitter", href: "https://x.com/PFG_Samson", icon: "🐦" },
     { label: "GitHub", href: "https://github.com/", icon: "💻" },
     { label: "Phone", href: "tel:+2348107281262", icon: "📞" },
@@ -27,7 +27,7 @@ export default function Contact() {
           </a>
         ))}
       </div>
-      <p className="text-muted-foreground">📍 Ogun State, Nigeria</p>
+      <p className="text-muted-foreground">Ode-Remo, Ogun State, Nigeria</p>
     </section>
   )
 }

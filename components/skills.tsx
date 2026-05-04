@@ -1,30 +1,39 @@
 export default function Skills() {
   const skillCategories = [
     {
-      title: "GIS & Remote Sensing",
+      title: "Remote Sensing & GIS Software",
       items: [
-        "QGIS, ArcGIS Pro, SNAP, ENVI",
-        "Google Earth Engine",
-        "Satellite Imagery Analysis",
-        "Cloud-Optimized GeoTIFFs (COGs)",
+        "Google Earth Engine, QGIS, ArcGIS Suite, ArcGIS Pro",
+        "ENVI, Erdas Imagine, PCI Geomatica",
+        "Satellite Imagery (Landsat, Sentinel, MODIS)",
+        "LiDAR, Aerial Photography Processing",
       ],
     },
     {
-      title: "Programming & Development",
+      title: "Programming & Web Technologies",
       items: [
-        "Python, JavaScript, React",
-        "Leaflet, CesiumJS, OpenLayers",
-        "GeoServer, PostGIS, GDAL",
-        "AI Prompt Engineering",
+        "Python (NumPy, Pandas, Scripting, Automation)",
+        "JavaScript (Google Earth Engine, Leaflet, Mapbox GL JS)",
+        "HTML5 & CSS3 (Responsive Design, Flexbox, Grid)",
+        "Mobile Data Collection (ODK, CAPI, Kobo Toolbox)",
       ],
     },
     {
-      title: "Data Science & Analysis",
+      title: "Geospatial Analysis",
       items: [
-        "Raster & Vector Data Processing",
-        "Spatial Statistics",
-        "Machine Learning for Geospatial Data",
-        "Terrain and Hydrological Modeling",
+        "Image Classification (Supervised, Unsupervised, Object-based)",
+        "Change Detection & LULC Mapping",
+        "Spatial Analysis (Buffer, Overlay, Network, Statistics)",
+        "3D Analysis (DEM, Terrain, Visualization)",
+      ],
+    },
+    {
+      title: "Data Processing & Documentation",
+      items: [
+        "Geometric & Atmospheric Correction",
+        "Radiometric Calibration, Mosaicking, Orthorectification",
+        "GPS Data Collection & Processing",
+        "Report Writing & Technical Documentation",
       ],
     },
   ]
@@ -32,7 +41,7 @@ export default function Skills() {
   return (
     <section id="skills" className="max-w-6xl mx-auto px-4 py-20">
       <h2 className="text-4xl font-bold text-center mb-12 text-foreground">Technical Expertise</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {skillCategories.map((category, idx) => (
           <div
             key={idx}
