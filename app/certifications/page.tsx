@@ -11,10 +11,20 @@ export default function CertificationsPage() {
   const certifications = [
     {
       id: "python-freecodecamp",
-      title: "Python Certification",
+      title: "Python Developer Certification",
       issuer: "freeCodeCamp",
       date: "2026",
-      image: "/placeholder.svg?height=400&width=600",
+      image:
+        "https://www.dropbox.com/scl/fi/2wpm5ggsjgi2omo3pfzmn/Python-Developer-Certification.jpg?rlkey=ydibomwzwitiyip39sv9oz3ec&st=usv08qzj&raw=1",
+      type: "certificate",
+    },
+    {
+      id: "javascript-freecodecamp",
+      title: "Javascript Developer Certification",
+      issuer: "freeCodeCamp",
+      date: "2026",
+      image:
+        "https://www.dropbox.com/scl/fi/oatn9fapdoz9m9fan18b8/Javascript-Developer-Certification.jpg?rlkey=p1amq2pu36ooa1liqweq5bxqv&st=wh44bgbz&raw=1",
       type: "certificate",
     },
     {
@@ -23,14 +33,16 @@ export default function CertificationsPage() {
       issuer: "Microsoft",
       date: "2026",
       image: "/placeholder.svg?height=400&width=600",
-      type: "certificate",
+      link: "https://www.dropbox.com/scl/fi/u6h50w1zcf5rnqpkkrrhe/Power-BI-Data-Modelling-Basics-Tutorial-Course.pdf?rlkey=by0eor32y6twomffeo6gokvfg&st=91deir0y&dl=0",
+      type: "pdf",
     },
     {
       id: "webdesign-freecodecamp",
       title: "Responsive Web Design",
       issuer: "freeCodeCamp",
       date: "2026",
-      image: "/placeholder.svg?height=400&width=600",
+      image:
+        "https://www.dropbox.com/scl/fi/qcgyskzj8m9946axu20a2/Responsive-Web-Design.jpg?rlkey=hc2ksue276ixm15kvlwd54vp6&st=ogwzkfyf&raw=1",
       type: "certificate",
     },
     {
@@ -39,7 +51,8 @@ export default function CertificationsPage() {
       issuer: "ESRI",
       date: "2026",
       image: "/placeholder.svg?height=400&width=600",
-      type: "certificate",
+      link: "https://www.dropbox.com/scl/fi/22gamk90ppone88qmtbdp/GIS-for-Climate-Action_Certificate_03262026.pdf?rlkey=3i1u90xbh7wikvqat5qs6acwp&st=z9n5zju5&dl=0",
+      type: "pdf",
     },
     {
       id: "spatial-data-esri",
@@ -47,7 +60,17 @@ export default function CertificationsPage() {
       issuer: "ESRI",
       date: "2024",
       image: "/placeholder.svg?height=400&width=600",
-      type: "certificate",
+      link: "https://www.dropbox.com/scl/fi/sh8h10jt1uk2dc8w9w0t0/Spatial-Data-Science_-The-New-Frontier-in-Analytics_Certificate_10032024.pdf?rlkey=a6u2tjzxqwhcg6n1nr8xl3bcm&st=3y0s0zec&dl=0",
+      type: "pdf",
+    },
+    {
+      id: "esri-aws",
+      title: "Introduction to Esri on AWS",
+      issuer: "ESRI",
+      date: "2024",
+      image: "/placeholder.svg?height=400&width=600",
+      link: "https://www.dropbox.com/scl/fi/oqkl3v6q3d4f01v3mdruh/Introduction-to-Esri-on-AWS.pdf?rlkey=3t1n3u7v0t8q6wmp92odek2tm&st=c0ptursd&dl=0",
+      type: "pdf",
     },
     {
       id: "google-digital",
@@ -102,8 +125,8 @@ export default function CertificationsPage() {
       type: "certificate",
     },
     {
-      id: "mindluster",
-      title: "Mindluster Certificate",
+      id: "pyqgis",
+      title: "Automated GIS Workflows with PyQGIS",
       issuer: "Mindluster",
       date: "2024",
       image: "/placeholder.svg?height=400&width=600",
