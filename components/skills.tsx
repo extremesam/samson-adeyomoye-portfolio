@@ -1,63 +1,82 @@
+import { Layers, Code2, Map, Database } from "lucide-react"
+
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Remote Sensing & GIS Software",
+      title: "Remote Sensing & GIS",
+      icon: <Layers className="w-6 h-6" />,
       items: [
-        "Google Earth Engine, QGIS, ArcGIS Suite, ArcGIS Pro",
+        "Google Earth Engine, QGIS, ArcGIS Pro",
         "ENVI, Erdas Imagine, PCI Geomatica",
         "Satellite Imagery (Landsat, Sentinel, MODIS)",
         "LiDAR, Aerial Photography Processing",
       ],
     },
     {
-      title: "Programming & Web Technologies",
+      title: "Geospatial Development",
+      icon: <Code2 className="w-6 h-6" />,
       items: [
-        "Python (NumPy, Pandas, Scripting, Automation)",
-        "JavaScript (Google Earth Engine, Leaflet, Mapbox GL JS)",
-        "HTML5 & CSS3 (Responsive Design, Flexbox, Grid)",
-        "Mobile Data Collection (ODK, CAPI, Kobo Toolbox)",
+        "Python (NumPy, Pandas, Geopandas)",
+        "JavaScript (Leaflet, Mapbox GL JS)",
+        "PostGIS & Spatial Databases",
+        "Mobile Data Collection (ODK, Kobo)",
       ],
     },
     {
-      title: "Geospatial Analysis",
+      title: "Spatial Analysis",
+      icon: <Map className="w-6 h-6" />,
       items: [
-        "Image Classification (Supervised, Unsupervised, Object-based)",
+        "Image Classification (AI/ML based)",
         "Change Detection & LULC Mapping",
-        "Spatial Analysis (Buffer, Overlay, Network, Statistics)",
-        "3D Analysis (DEM, Terrain, Visualization)",
+        "Network & Statistical Analysis",
+        "3D Terrain Analysis & DEM",
       ],
     },
     {
-      title: "Data Processing & Documentation",
+      title: "Data Engineering",
+      icon: <Database className="w-6 h-6" />,
       items: [
         "Geometric & Atmospheric Correction",
-        "Radiometric Calibration, Mosaicking, Orthorectification",
-        "GPS Data Collection & Processing",
-        "Report Writing & Technical Documentation",
+        "Mosaicking & Orthorectification",
+        "GPS/GNSS Data Processing",
+        "Technical Documentation",
       ],
     },
   ]
 
   return (
-    <section id="skills" className="max-w-6xl mx-auto px-4 py-20">
-      <h2 className="text-4xl font-bold text-center mb-12 text-foreground">Technical Expertise</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {skillCategories.map((category, idx) => (
-          <div
-            key={idx}
-            className="bg-card p-8 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-          >
-            <h3 className="text-xl font-semibold text-primary mb-4">{category.title}</h3>
-            <ul className="space-y-2">
-              {category.items.map((item, i) => (
-                <li key={i} className="text-muted-foreground flex items-start">
-                  <span className="text-primary font-bold mr-2">▹</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+    <section id="skills" className="py-24 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform translate-x-1/2" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Technical Prowess</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Combining traditional GIS expertise with modern software development and AI to solve complex spatial problems.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {skillCategories.map((category, idx) => (
+            <div
+              key={idx}
+              className="glass p-8 rounded-2xl group hover:border-primary/50 transition-all duration-500"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
+                {category.icon}
+              </div>
+              <h3 className="text-xl font-bold mb-4">{category.title}</h3>
+              <ul className="space-y-3">
+                {category.items.map((item, i) => (
+                  <li key={i} className="text-muted-foreground text-sm flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 mt-1.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

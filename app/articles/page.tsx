@@ -47,54 +47,77 @@ export default function ArticlesPage() {
   const filteredArticles = filter === "all" ? articles : articles.filter((a) => a.category === filter)
 
   return (
-    <>
+    <main className="min-h-screen bg-background geo-grid selection:bg-primary/30">
       <Navigation />
-      <div className="min-h-screen bg-background pt-32 pb-16">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="mb-12">
-            <h1 className="text-5xl font-bold text-foreground mb-4">Articles</h1>
-            <p className="text-lg text-muted-foreground">Insights and explorations in geospatial technology</p>
+
+      <div className="relative pt-32 pb-20 overflow-hidden">
+        {/* Decorative background element */}
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-5xl mx-auto px-4 relative">
+          <div className="mb-16">
+            <h1 className="text-5xl md:text-6xl font-black text-foreground mb-6 tracking-tight">
+              Spatial <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-emerald-400">Insights</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              Explorations at the intersection of geography, data science, and technology.
+              Documentation of my journey in geospatial analysis.
+            </p>
           </div>
 
-          <div className="flex gap-2 mb-12 flex-wrap">
+          <div className="flex gap-3 mb-16 flex-wrap">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-4 py-2 rounded-full transition-all text-sm ${
+                className={`px-6 py-2 rounded-full transition-all text-sm font-medium border ${
                   filter === cat
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-card text-foreground hover:bg-card hover:shadow-md"
+                    ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20"
+                    : "bg-background/50 text-muted-foreground border-border hover:border-primary/50 hover:text-foreground backdrop-blur-sm"
                 }`}
               >
-                {cat === "all" ? "All Articles" : cat}
+                {cat === "all" ? "All Categories" : cat}
               </button>
             ))}
           </div>
 
-          <div className="space-y-6">
+          <div className="grid gap-8">
             {filteredArticles.map((article) => (
               <a
                 key={article.id}
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-card p-6 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                className="glass p-8 rounded-2xl group relative overflow-hidden transition-all duration-500 hover:ring-2 hover:ring-primary/20"
               >
-                <div className="flex justify-between items-start gap-4">
+                <div className="flex justify-between items-center gap-6">
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition">
-                      {article.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">{article.description}</p>
-                    <div className="flex gap-4">
-                      <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-xs font-bold tracking-widest uppercase text-primary/70">
                         {article.category}
                       </span>
-                      <span className="text-sm text-muted-foreground">{article.readTime} read</span>
+                      <span className="w-1 h-1 rounded-full bg-border" />
+                      <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
+                        {article.readTime}
+                      </span>
                     </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                      {article.title}
+                    </h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed line-clamp-2">
+                      {article.description}
+                    </p>
                   </div>
-                  <div className="text-2xl">→</div>
+                  <div className="hidden md:flex w-14 h-14 rounded-full border border-border items-center justify-center transition-all duration-500 group-hover:bg-primary group-hover:border-primary group-hover:translate-x-2">
+                    <svg
+                      className="w-6 h-6 text-foreground group-hover:text-primary-foreground transition-colors"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
                 </div>
               </a>
             ))}
@@ -103,6 +126,6 @@ export default function ArticlesPage() {
       </div>
       <Footer />
       <ScrollToTop />
-    </>
+    </main>
   )
 }
