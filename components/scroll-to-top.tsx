@@ -20,12 +20,19 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary-dark transform transition-all duration-300 flex items-center justify-center z-40 ${
-        isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0 pointer-events-none"
+      className={`fixed bottom-8 right-8 w-12 h-12 glass text-primary rounded-full shadow-xl hover:bg-primary hover:text-primary-foreground transform transition-all duration-500 flex items-center justify-center z-40 group ${
+        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-50 pointer-events-none"
       }`}
       aria-label="Scroll to top"
     >
-      ↑
+      <svg
+        className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-1"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
     </button>
   )
 }

@@ -100,64 +100,73 @@ export default function ShowcasePage() {
   return (
     <>
       <Navigation />
-      <div className="min-h-screen bg-background pt-32 pb-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="mb-12">
-            <h1 className="text-5xl font-bold text-foreground mb-4">Showcase</h1>
-            <p className="text-lg text-muted-foreground">
-              A collection of my creative geospatial projects and explorations
+      <div className="min-h-screen bg-background pt-40 pb-24 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/5 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-accent/5 blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="mb-16">
+            <h1 className="text-6xl font-bold text-foreground mb-6 tracking-tight">Geospatial Showcase</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              Exploring the boundaries of spatial data visualization and analysis through code and cartography.
             </p>
           </div>
 
-          <div className="flex gap-4 mb-12 flex-wrap">
+          <div className="flex gap-3 mb-16 flex-wrap">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-6 py-2 rounded-full transition-all ${
+                className={`px-8 py-3 rounded-full transition-all text-sm font-bold tracking-wide border ${
                   filter === cat
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-card text-foreground hover:bg-card hover:shadow-md"
+                    ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20"
+                    : "bg-background text-foreground/60 border-foreground/10 hover:border-primary/50 hover:text-primary"
                 }`}
               >
-                {cat === "all" ? "All Projects" : cat === "30DaysMapChallenge" ? "#30DaysMapChallenge" : cat}
+                {cat === "all" ? "All Endeavors" : cat === "30DaysMapChallenge" ? "#30DaysMapChallenge" : cat}
               </button>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="group glass rounded-3xl overflow-hidden hover:border-primary/50 transition-all duration-500"
               >
-                <div className="relative h-48 overflow-hidden bg-muted">
+                <div className="relative h-56 overflow-hidden">
+                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
+                  <div className="absolute top-4 right-4 z-20">
+                    <span className="px-3 py-1 bg-background/80 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest border border-foreground/10">
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-foreground mb-2">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex gap-2">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed line-clamp-2">{project.description}</p>
+                  <div className="flex gap-3">
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 px-3 py-2 bg-primary text-primary-foreground rounded text-sm font-medium hover:opacity-90 transition text-center"
+                      className="flex-1 px-4 py-2.5 bg-primary text-primary-foreground rounded-xl text-xs font-bold hover:shadow-lg hover:shadow-primary/20 transition-all text-center"
                     >
-                      {project.type === "live" ? "View Live" : "View Project"}
+                      {project.type === "live" ? "Launch Live" : "Explore Code"}
                     </a>
-                    {project.github && (
+                    {project.github && project.type === "live" && (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-2 border border-border rounded text-sm hover:bg-card transition"
+                        className="px-4 py-2.5 bg-foreground/5 text-foreground rounded-xl text-xs font-bold hover:bg-foreground/10 transition-all"
                       >
-                        GitHub
+                        Source
                       </a>
                     )}
                   </div>

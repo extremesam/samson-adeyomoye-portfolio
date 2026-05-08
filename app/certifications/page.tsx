@@ -130,58 +130,72 @@ export default function CertificationsPage() {
   return (
     <>
       <Navigation />
-      <div className="min-h-screen bg-background pt-32 pb-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="mb-12">
-            <h1 className="text-5xl font-bold text-foreground mb-4">Certifications</h1>
-            <p className="text-lg text-muted-foreground">
-              Professional certifications and training achievements in geospatial technology and data science
+      <div className="min-h-screen bg-background pt-40 pb-24 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full geo-grid opacity-[0.03] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="mb-16">
+            <h1 className="text-6xl font-bold text-foreground mb-6 tracking-tight">Accreditations</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              Continuous learning and professional validation in the ever-evolving landscape of geospatial technologies.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {certifications.map((cert) => (
               <div
                 key={cert.id}
-                className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                className="group glass rounded-3xl overflow-hidden hover:border-primary/50 transition-all duration-500 cursor-pointer flex flex-col"
                 onClick={() => setSelectedCert(cert.id)}
               >
-                <div className="relative h-64 overflow-hidden bg-muted">
+                <div className="relative h-64 overflow-hidden bg-foreground/5">
+                  <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
                   {cert.type === "certificate" ? (
                     <img
                       src={cert.image || "/placeholder.svg"}
                       alt={cert.title}
-                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
                     />
                   ) : (
-                    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-red-500/10 to-red-600/20">
-                      <svg
-                        className="w-16 h-16 text-red-500 mb-2"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM8.5 13h1.3l.7 2.1.7-2.1h1.3l-1.3 3.5 1.4 3.5h-1.3l-.8-2.3-.8 2.3H8.5l1.4-3.5L8.5 13zm5.5 0h1.8c.9 0 1.7.7 1.7 1.5v3c0 .8-.8 1.5-1.7 1.5H14v-6zm1.2 1.2v3.6h.6c.3 0 .5-.2.5-.5v-2.6c0-.3-.2-.5-.5-.5h-.6z"/>
-                      </svg>
-                      <span className="text-sm font-medium text-muted-foreground">PDF Document</span>
-                      <span className="text-xs text-muted-foreground/70 mt-1">Click to preview</span>
+                    <div className="flex flex-col items-center justify-center h-full bg-gradient-to-br from-primary/5 to-primary/10">
+                      <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-4 group-hover:rotate-6 transition-transform duration-500">
+                        <svg
+                          className="w-8 h-8"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">PDF Verification</span>
                     </div>
                   )}
                 </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-lg text-foreground mb-2">{cert.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-1">Issued by: {cert.issuer}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{cert.date}</p>
-                  {cert.type === "pdf" && cert.link && (
-                    <a
-                      href={cert.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded text-sm font-medium hover:opacity-90 transition"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Download PDF
-                    </a>
-                  )}
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-wider">
+                      {cert.date}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-xl text-foreground mb-2 group-hover:text-primary transition-colors leading-tight">{cert.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-6 font-medium">Issued by {cert.issuer}</p>
+
+                  <div className="mt-auto">
+                    {cert.type === "pdf" && cert.link ? (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs font-bold text-primary hover:gap-3 transition-all"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        VIEW DOCUMENT <span>→</span>
+                      </a>
+                    ) : (
+                      <span className="text-[10px] font-bold text-foreground/30 uppercase tracking-widest">Digital Certificate</span>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}

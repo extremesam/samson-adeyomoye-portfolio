@@ -1,5 +1,7 @@
 "use client"
 
+import { motion } from "framer-motion"
+
 export default function Experience() {
   const experiences = [
     {
@@ -90,37 +92,72 @@ export default function Experience() {
   }
 
   return (
-    <section id="experience" className="max-w-6xl mx-auto px-4 py-20">
-      <h2 className="text-4xl font-bold text-center mb-12 text-foreground">Professional Experience</h2>
-      <div className="space-y-8">
-        {experiences.map((exp, idx) => (
-          <div key={idx} className="relative pl-8 pb-8">
-            <div className="bg-card p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4">
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-foreground mb-2">{exp.title}</h3>
-                  <p className="text-lg font-semibold text-foreground/90">{exp.company}</p>
-                </div>
-                <div className="text-right md:min-w-fit">
-                  <p className="text-sm font-semibold text-foreground/70">
-                    {exp.startDate} - {exp.endDate}
-                  </p>
-                  <p className="text-xs font-semibold text-foreground/60 mt-2">
-                    {calculateDuration(exp.startDate, exp.endDate)}
-                  </p>
+    <section id="experience" className="py-24 bg-foreground/[0.02]">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4"
+        >
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Professional Journey</h2>
+            <p className="text-muted-foreground max-w-xl">
+              A timeline of my contributions to the geospatial industry, from innovative SaaS development to environmental research.
+            </p>
+          </div>
+          <div className="hidden md:block text-right">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 0.1, scale: 1 }}
+              viewport={{ once: true }}
+              className="text-5xl font-bold text-primary"
+            >
+              EXPERIENCE
+            </motion.div>
+          </div>
+        </motion.div>
+
+        <div className="space-y-12">
+          {experiences.map((exp, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 relative group"
+            >
+              <div className="md:text-right pt-2">
+                <div className="text-sm font-bold text-primary uppercase tracking-widest mb-1">{exp.startDate}</div>
+                <div className="text-xs text-muted-foreground font-medium uppercase tracking-tighter">{exp.endDate}</div>
+                <div className="mt-4 inline-block px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full border border-primary/20">
+                  {calculateDuration(exp.startDate, exp.endDate)}
                 </div>
               </div>
-              <ul className="space-y-3">
-                {exp.description.map((item, i) => (
-                  <li key={i} className="text-foreground/85 text-base flex items-start leading-relaxed">
-                    <span className="text-accent/60 font-bold mr-3 mt-1">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
+
+              <motion.div
+                whileHover={{ x: 10 }}
+                className="glass p-8 rounded-3xl group-hover:border-primary/30 transition-all duration-500 relative"
+              >
+                <div className="absolute top-8 -left-3 w-6 h-6 bg-primary rounded-full border-4 border-background hidden md:block" />
+
+                <h3 className="text-2xl font-bold mb-1">{exp.title}</h3>
+                <p className="text-lg font-semibold text-primary mb-6">{exp.company}</p>
+
+                <ul className="space-y-4">
+                  {exp.description.map((item, i) => (
+                    <li key={i} className="text-muted-foreground leading-relaxed flex items-start gap-4">
+                      <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary/60 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )
