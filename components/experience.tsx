@@ -1,5 +1,7 @@
 "use client"
 
+import { motion } from "framer-motion"
+
 export default function Experience() {
   const experiences = [
     {
@@ -92,7 +94,13 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 bg-foreground/[0.02]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4"
+        >
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Professional Journey</h2>
             <p className="text-muted-foreground max-w-xl">
@@ -100,13 +108,27 @@ export default function Experience() {
             </p>
           </div>
           <div className="hidden md:block text-right">
-            <div className="text-5xl font-bold text-primary/10">EXPERIENCE</div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 0.1, scale: 1 }}
+              viewport={{ once: true }}
+              className="text-5xl font-bold text-primary"
+            >
+              EXPERIENCE
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="space-y-12">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 relative group">
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 relative group"
+            >
               <div className="md:text-right pt-2">
                 <div className="text-sm font-bold text-primary uppercase tracking-widest mb-1">{exp.startDate}</div>
                 <div className="text-xs text-muted-foreground font-medium uppercase tracking-tighter">{exp.endDate}</div>
@@ -115,7 +137,10 @@ export default function Experience() {
                 </div>
               </div>
 
-              <div className="glass p-8 rounded-3xl group-hover:border-primary/30 transition-all duration-500 relative">
+              <motion.div
+                whileHover={{ x: 10 }}
+                className="glass p-8 rounded-3xl group-hover:border-primary/30 transition-all duration-500 relative"
+              >
                 <div className="absolute top-8 -left-3 w-6 h-6 bg-primary rounded-full border-4 border-background hidden md:block" />
 
                 <h3 className="text-2xl font-bold mb-1">{exp.title}</h3>
@@ -129,8 +154,8 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>

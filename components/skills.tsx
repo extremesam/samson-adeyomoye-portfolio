@@ -1,4 +1,7 @@
+"use client"
+
 import { Layers, Code2, Map, Database } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function Skills() {
   const skillCategories = [
@@ -46,20 +49,30 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-24 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform translate-x-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Technical Prowess</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Combining traditional GIS expertise with modern software development and AI to solve complex spatial problems.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillCategories.map((category, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="glass p-8 rounded-2xl group hover:border-primary/50 transition-all duration-500"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
@@ -74,7 +87,7 @@ export default function Skills() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
